@@ -27,15 +27,15 @@ const CreateTodoButton = (props) => {
   return (
     <>
       <form onSubmit={onSubmit} className="card-container">
-        <h1 className="card-title">Create new task</h1>
+        <h1 className="card-title">Craer una nota</h1>
         <textarea
           value={newTodoValue}
           onChange={onChange}
           className="card-input"
-          placeholder="Write new task"
+          placeholder="Escribe una nota"
         />
         <button className="card-button" type="submit">
-          Add task
+          Crear nota
         </button>
       </form>
     </>
@@ -51,7 +51,7 @@ const CreateTodoButtonOnly = (props) => {
   return (
     <>
       <button className="card__button--only" onClick={onClickButton}>
-        Add task
+        Crear nota
       </button>
     </>
   );

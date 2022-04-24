@@ -11,9 +11,9 @@ const TodoCounter = () => {
 
   return (
     <div>
-      <h1 className="TodoCounter__title">Your Tasks</h1>
+      <h1 className="TodoCounter__title">Tus notas</h1>
       <h2 className="TodoCounter__subtitle">
-        Has been completed {completedTodos} of {totalTodos} TO DOs
+        Haz completado {completedTodos} de {totalTodos} notas
       </h2>
     </div>
   );

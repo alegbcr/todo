@@ -69,11 +69,11 @@ const AppUI = () => {
                   ))}
 
                   {/* Falta de trabajar */}
-                  <div className="item2__item">
+                  {/* <div className="item2__item">
                     <button>
                       <i className="far fa-eye-slash"> Hide completed task</i>
                     </button>
-                  </div>
+                  </div> */}
                 </TodoList>
 
                 {!!openModal && (
