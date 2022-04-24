@@ -1,0 +1,12 @@
+.TodoCounter__title{
+    padding: 4rem 0rem .5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.TodoCounter__subtitle{
+    padding: .2rem 2rem;
+    font-size: .8rem;
+    text-align: center;
+    font-weight: 200;
+}

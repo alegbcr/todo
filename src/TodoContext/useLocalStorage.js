@@ -1,0 +1,48 @@
+import { useState, useEffect } from "react";
+
+const useLocalStorage = (itemName, initialValue) => {
+  // State to render
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  // State of localStorage
+  const [item, setItem] = useState(initialValue);
+
+  useEffect(() => {
+    setTimeout(() => {
+      try {
+        // set localStorage
+        const localStorageItem = localStorage.getItem(itemName);
+        let parsedItem;
+
+        if (!localStorageItem) {
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
+          parsedItem = [];
+        } else {
+          parsedItem = JSON.parse(localStorageItem);
+        }
+
+        // Updating the state
+        setItem(parsedItem);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+      }
+    }, 2000);
+  });
+
+  // Save ToDos in localStorage
+  const saveItem = (newItem) => {
+    try {
+      const stringifiedItem = JSON.stringify(newItem);
+      localStorage.setItem(itemName, stringifiedItem);
+      setItem(newItem);
+    } catch (error) {
+      setError(error);
+    }
+  };
+
+  return { item, saveItem, loading, error };
+};
+
+export { useLocalStorage };
