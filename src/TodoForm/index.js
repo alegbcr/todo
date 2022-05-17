@@ -1,15 +1,11 @@
-import React, { useContext, useState } from "react";
-import { TodoContext } from "../TodoContext";
+import React, { useState } from "react";
 
 // css
 import "./TodoForm.css";
 
-const TodoForm = () => {
+const TodoForm = ({ addTodo, setOpenModal }) => {
   // Local State
   const [newTodoValue, setNewTodoValue] = useState();
-
-  // Context State
-  const { addTodo, setOpenModal } = useContext(TodoContext);
 
   // Functions
   const onChange = (event) => {

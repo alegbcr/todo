@@ -1,9 +1,13 @@
-.todo-search__main {
+.todo-search__container {
     display: flex;
     justify-content: center;
 }
 
-.todo-search__main--item {
+.todo-search__container--loading {
+    opacity: 0.5;
+}
+
+.todo-search--item {
     width: 20rem;
     padding: .5rem .5rem;
     margin: 0 2rem .3rem 2rem;
@@ -21,6 +25,10 @@
     margin-right: .5rem;
     width: 100%;
     background-color: transparent;
+}
+
+.todo-search:disabled {
+    opacity: 0.5
 }
 
 .todo-search:focus {

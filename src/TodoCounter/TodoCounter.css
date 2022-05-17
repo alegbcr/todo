@@ -1,10 +1,14 @@
-.TodoCounter__title{
+.TodoCounter__container--loading {
+    opacity: 0.5;
+}
+
+.TodoCounter__container .TodoCounter__title{
     padding: 4rem 0rem .5rem;
     font-size: 3rem;
     text-align: center;
 }
 
-.TodoCounter__subtitle{
+.TodoCounter__container .TodoCounter__subtitle{
     padding: .2rem 2rem;
     font-size: .8rem;
     text-align: center;

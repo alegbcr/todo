@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const useLocalStorage = (itemName, initialValue) => {
   // State to render
+  const [sincronizedItem, setSincronizedItem] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -25,11 +26,12 @@ const useLocalStorage = (itemName, initialValue) => {
         // Updating the state
         setItem(parsedItem);
         setLoading(false);
+        setSincronizedItem(true);
       } catch (error) {
         setError(error);
       }
     }, 2000);
-  });
+  }, [sincronizedItem]);
 
   // Save ToDos in localStorage
   const saveItem = (newItem) => {
@@ -42,7 +44,13 @@ const useLocalStorage = (itemName, initialValue) => {
     }
   };
 
-  return { item, saveItem, loading, error };
+  // Sicronize all ToDos
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  };
+
+  return { item, saveItem, loading, error, sincronizeItem };
 };
 
 export { useLocalStorage };

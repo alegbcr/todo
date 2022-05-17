@@ -1,17 +1,11 @@
-import React, { useContext, useState } from "react";
-
-// context
-import { TodoContext } from "../TodoContext";
+import React, { useState } from "react";
 
 // css
 import "./CreateTodoButton.css";
 
-const CreateTodoButton = (props) => {
+const CreateTodoButton = ({ addTodo }) => {
   // Local State
   const [newTodoValue, setNewTodoValue] = useState();
-
-  // Context State
-  const { addTodo } = useContext(TodoContext);
 
   // Functions
   const onChange = (event) => {
@@ -42,10 +36,10 @@ const CreateTodoButton = (props) => {
   );
 };
 
-const CreateTodoButtonOnly = (props) => {
+const CreateTodoButtonOnly = ({ setOpenModal }) => {
   // Functions
   const onClickButton = () => {
-    props.setOpenModal((prevState) => !prevState);
+    setOpenModal((prevState) => !prevState);
   };
 
   return (

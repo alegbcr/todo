@@ -9,8 +9,10 @@
   --black-shadow: rgba(43, 43, 43, 0.6);
   /* Background */
   --background: #046186;
+  --black-alpha: #2b2b2b9c;
   --blue-alpha: rgba(43, 43, 43, 0.8);
   --white-alpha: rgba(167, 167, 167, 0.8);
+  --green-alpha: #069e13a0;
   
 }
 
@@ -21,15 +23,7 @@
   background-color: var(--blue);
 }
 
-/* MAIN CONTAINERS */
-.desktop__container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  height: 100vh;
-  justify-items: center;
-  align-items: center;
-}
-
+/* MOBILE CONTENT */
 .mobile__container {
   flex-direction: column;
   height: 100vh;
@@ -37,7 +31,6 @@
   align-items: center;
 }
 
-/* MOBILE CONTENT */
 .mobile__container__item--Item2{
   justify-self: center;
   align-self: start; 
@@ -70,6 +63,14 @@
 }
 
 /* DESKTOP CONTENT */
+.desktop__container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+}
+
 .desktop__card {
   justify-self: end;
   margin-right: 3rem;
@@ -84,14 +85,14 @@
   margin-left: 3rem;
 }
 
-.desktop__container__item--Item2 .item2__item {
+/* .desktop__container__item--Item2 .item2__item {
   display: flex;
   justify-content: center;
   padding: .5rem 1rem;
   cursor: pointer;
   font-size: .9rem;
   font-weight: 200;
-}
+} */
 
 
 /* Button */
