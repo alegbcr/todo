@@ -62,21 +62,26 @@ const useTodos = () => {
   // Hide ToDos
   // if (todos.completed === false) {
   // }
-  return {
+
+  const states = {
     loading,
     error,
     totalTodos,
     completedTodos,
     searchValue,
-    setSearchValue,
+    openModal,
     searchedTodos,
+  };
+
+  const setStates = {
+    setSearchValue,
     addTodo,
     completeTodo,
     deleteTodo,
-    openModal,
     setOpenModal,
     sincronizeTodos,
   };
+  return { states, setStates };
 };
 
 export { useTodos };

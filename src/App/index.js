@@ -20,21 +20,26 @@ import { ChangeAlert } from "../ChangeAlert";
 import "./App.css";
 
 const App = () => {
+  const { states, setStates } = useTodos();
+
   const {
-    error,
     loading,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
+    error,
     totalTodos,
     completedTodos,
     searchValue,
+    openModal,
+    searchedTodos,
+  } = states;
+
+  const {
     setSearchValue,
     addTodo,
+    completeTodo,
+    deleteTodo,
+    setOpenModal,
     sincronizeTodos,
-  } = useTodos();
+  } = setStates;
 
   const viewportWidth = window.innerWidth;
 
