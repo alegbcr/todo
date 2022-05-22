@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // components
 import { useTodos } from "./useTodos";
@@ -20,6 +20,7 @@ import { ChangeAlert } from "../ChangeAlert";
 import "./App.css";
 
 const App = () => {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const { states, setStates } = useTodos();
 
   const {
@@ -41,7 +42,16 @@ const App = () => {
     sincronizeTodos,
   } = setStates;
 
-  const viewportWidth = window.innerWidth;
+  // Viewport Listener
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [viewportWidth]);
 
   return (
     <>
